@@ -35,6 +35,15 @@ Projetado para voluntários com baixo ou intermediário letramento digital em am
 
 ---
 
+---
+
+## 🔒 Regras de Integridade, Segurança e Qualidade (Revisão Técnica)
+Para garantir a confiabilidade dos dados operacionais e a inclusão dos voluntários na rotina da cozinha comunitária, o sistema implementa as seguintes travas arquiteturais:
+
+* **Validação de Entrada (RNF02):** Uso de esquemas Pydantic no back-end para bloquear quantidades negativas ou nulas (`quantidade > 0 kg`), datas retroativas inválidas e baixas superiores ao saldo disponível no lote.
+* **Controle de Acesso por Perfil (RNF01):** Segregação de rotas entre *Operador* (cadastro e baixa diária) e *Gestor* (acesso exclusivo à emissão de relatórios PDF de prestação de contas).
+* **Diretrizes de Acessibilidade (RNF04):** Validação estrita de contraste mínimo de `4.5:1`, tipografia base de `16px`, áreas de clique `>= 48x48px` e redundância visual obrigatória (**Cor + Ícone + Texto**) em todos os alertas de vencimento.
+
 ## 📁 Estrutura Inicial do Projeto
 ```text
 cozinha-esperanca-mvp/
